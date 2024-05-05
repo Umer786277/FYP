@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+{% block title %}Booking Status{% endblock title %}
+{% block maincontent %}
+<h1>Booking Status</h1>
+
+    
+<p>{{ message }}</p>
+
+    
+<a href="{% url 'seating_plan' %}">Go back to Seating Plan</a>
+  
+{% endblock maincontent %}

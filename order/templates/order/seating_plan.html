@@ -1,0 +1,70 @@
+{% extends 'base/base.html' %}
+{% block title %}Seating Plan{% endblock title %}
+{% block maincontent %}
+
+<style>
+    .table {
+        display: inline-block;
+        width: 20%;
+        height: auto;
+        margin: 10px;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        text-align: center;
+    }
+    .table h2 {
+        color: #333;
+    }
+    .table p {
+        color: #666;
+        font-style: italic;
+    }
+    .table a {
+        display: block;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    .table a:hover {
+        background-color: #45a049;
+    }
+    .booked {
+        background-color: #f2f2f2;
+    }
+    .restaurant-info {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+</style>
+
+<div class="restaurant-info">
+    <h1  class="text text-center">FOODIES</h1>
+    <p style="" class="lead fs-4">Welcome to Your Restaurant! Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Nullam sit amet nisi vitae justo suscipit vehicula. Integer nec lacus vitae nisi pharetra fermentum.</p>
+</div>
+
+<h2 class="text text-center">Seating Plan</h2>
+<div class="container">
+
+{% for table in tables %}
+
+<div class="table {% if not table.is_available %}booked{% endif %}">
+
+    <h3>Table {{ table.table_number }}</h3>
+
+    {% if table.is_available %}
+        <a href="{% url 'book_table' table.table_number %}">Book</a>
+    {% else %}
+        <p>Booked by: {{ table.booked_by }}</p>
+    {% endif %}
+        
+</div>
+
+{% endfor %}
+</div>
+
+{% endblock maincontent %}

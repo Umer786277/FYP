@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+     
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+ 
+
+ 
+
+    <title>{% block title %}Home{% endblock title %}</title>
+    <style>
+    
+      
+      
+   
+      
+   
+    
+   
+      
+     
+      
+    
+      
+        
+.booked
+ {
+    background-color: red;}
+ 
+
+    #box1{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+
+      
+  }
+  .hd{
+      font-weight: 600;
+      font-size: 18px;
+  }
+
+
+    .dn{
+      color: darkblue;
+    }
+
+    .bt{
+      height: 60vh;
+      background-image: url(https://img.freepik.com/premium-photo/herb-spices-cooking-background_136595-562.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .nav-link{
+      margin-left: 10px;
+      font-weight: 700;
+      font-size: 20px;
+     
+  }
+  .nav-item a{
+    text-decoration: none;
+    color:darkblue
+  }
+  .navbar-brand{
+    margin-left: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    color:darkblue;
+   
+}
+</style>
+</head>
+<body>
+    
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light   bg-light">
+            <div class="container">
+            <a class="navbar-brand hd"  href="/">
+              <img class="img-fluid img-responsive" style="height: 80px; border-radius:50%" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACUCAMAAABGFyDbAAABXFBMVEX/////twAAAAD/uQD/uwD/tQDceQH/vQBEGgL/vwDabwD/rgD/swD/wQAyAADcdwAnAABwXFqMenrc1dIqAAC0qqb/z3n6+PcWAAAfAADp5eH/9uE9CAAuAAAQAADZawD//ffv7ew3AAD/wk//6bzzrgA/FAE/DwD/+u6YiYT+14g/AADEvLf+vTb/xmDhmgCBTgD/8dCjl5LopgDEhAB1QAC4dQBoOwHQysZfRELU09fBYgBsRTbWWwD46dz+25X+463/0m//z2GfZgCISwDQlgH/zU/hpSnTigCLWQC2fQD/xjWrdAXVnz9qYGd6amltVklMKydVKgF+UySHY0E2HSLAr5kxDwumiV3kvGl/eINSIABlOh5qQx1xNQCMiJGWbT4/LUCXeFqpezqli3WlUQB0UDOYPQDulQCaViiJXkw3FCRgIQB1IQDuwpzwz7DikUrhnmnbgy3suIbkcSdKAAAKqklEQVR4nO2b63faRhqHdecmAxLIAnEVtkCiYAGSbeTEYEOUGpsEcLK3Zltn22aTdlNu/v/P2REgIYjd7llXIh/0+8Jo8LGe897mHY2AIE+ePHny5MmTJ09ftfL5XRN8KbF82elcllOLi8N2uV3fMZAhsSOr/f61KivVeupSPul3ay9O2uKOqeo3ta6u4DAuCAJ6IwgY5gsI+ovqbrlS8qkSQOGV8NUnptRuUjukEl/WFAz+Uj5VLe8Qq33yIBUM73WFHWIJqu9BKhi7lnfnxboiPEwFo7q6O6y2gD+ChV1f7SoX8/WDx6hgtHawI6rUJf4YFYr19B2V+sOQ+khgoajS/3ZXVFhXQB/GUq6u9ncU7/lQD96mQjFYEBRBOLrY2cpTvrreqqOoT7lWVVm92t8VEwj3m96mCzFFv9YxH4Yp8uHusOp4bcNYmH6t+BYzgrzDbuvwSrdhoWhfD4BPHAiWL3aIpdqx4K6xYAOmzuXLG/TV6wHdqPC7wKqjvfUajfUVEGd4tXzxUtFVVR1qo0wWSdLuo+Vf9qyOBsd7YEgK9Uu5d5vOxDNNlo81G0MkoUmsy1x15ViHfT5UEMj9faGP4gd1uI8k350e12q1N28l5oxnGSqapTl3udpKv1brXcvCIRTryTpZf9lN93UFtBQo6Otlvf+WjkExDRkx7nLVOzc3N50LCJKyf/krethR/3bU6aComZu+vULSz7Cclh26bLBUCqx87ADReP7vF8Lt6B8bfU7AX0x3hxWogYxi7nIB8YUEAzWOhZt+/HSzoQjcFtO6r0vzzVHUZUdCvAZu+d0JWW+/K21h7b0rFnUscPWc58LRprtUhWST/afcabXhZHEb67Tol1EY851WWC1ecZGKHSQZlpJf8mUcyxSP8S2skt8osyheO+OTYRdLK40w0HO5zVdJOBAu1TYbnUAtfassEnOv1oylNdcqayxLQd/JHd5IwL10qYZuYRVulWW1EL5nmazkEhWvjfjGSYeHSXiB1dvsCwO9sBltqEBBQ8Sl8sVkGf6YTB2RC0f5073NDXaga2HBvhMmVhi4g5UcQRR5sU8uA/y2sIXl62bWuYn+ADUSrmQjk6icdQ8uSDPvwttY/fjxGku+g5ChC1S8RkFvlXIVNwM8093Ewq6jxzaXvuElxIVFKBZt8C/QS7NWBWrxLSxUjdpyE1WZWMaFZJSQ/J2CWRU00Ev2t7Hi9kqGn0KU5nxNDYOAD9ic1Eu+2iwQ6NUGlq/HN8KOe5FHGmd28wS6r19txZaesScBCHoOcbyTaCLNiroOHUx413i/saFFsVrpe91mT+w1hNBOY0lFTpItDFR5V4o3hnZjCadh/+hftm2b70dW8zuNNdD4HxXrlnu9gt9flLo2iH7Y7y9Jn9fNju8nnko6j8W+sdIQFRJ+oMzPa1AfoPKXtDvVIvV1zyTE4TaCpShoXSwxNeNfUHxruhVVksZMnOlZ0RX4cNZAHK4QCywrtBYeM8xl2WYFGm7828LCPp4xTncRm9by9Qvpd0V/MWw98wLVwcAqSG9NLDTkEtYbG1a8pmbVWnxtLT26wGq8N7GwTx9AbDld5kHIv7WyDLvOqiqidOO6FVtCduFEyVooceIXjs46TAXRI/5nZR3gCVlGUDVtzYC2sLjAujJnQpFfWS3sNBaTjDH6upxmFCW6p9+uqxRomY3UHJolA/sUGUBxxzsusL6d9a2aFDhWhOM92bYGojKwVlGzfIgGg3dgHXUaC0IG/Pt18qu60N2TVfuDyxrIxf+YyyQqRz42K1nnN9fDBPQdaUEoCq77dNguY58om5wkQXyGBiPnNz8MaCFO7K3MlyctutVSgMh6RvMjF/Y+HLjJ8WOniSsYa0QGiRegmLqx9aFLHKM+fCL8hYhI5DU0irpABXJxwA4fOYzastqnCPEbX3GqNxXHE/vlMMtvRtcjQskI8YyCNIcCfpKL5Kb59TVXpKCB/oduRAXgwudswyljTectIme3l5Rk+Od/ZC4UI4ALm3xy5AwVBJhmwbl95jnCxY6/OFbcpMIB1ccGpBWdqlnjXIQggmPbTCyssZXa3u9woSSg+kBDA+f2Yvn7YBBw3dummokR1KwJj8YXJkeArWhISji5zwdOzOXOp7b4aiQotvk9/nCAoaAyRCK/NUAQOl3f86LYsp9EVxIFnqWu0YccGQKmeva8CdFZymGqtVqrTyY5qkDMD3Jg6wkEZhTRyG8Uy2sIvdqHic4/1m1NVveIjRCah+56Ku5bt4VwCPjv2QeKg5ho0eyyJpNH/9ufyDVdGYyjjWMwjjnuKWjAh2GYzxf6RDz7+Jk+g5rU+sRnOn70fz1d98T0vpVfcBHjVZSBm0cZDuLuXr/9qX990v34y6/UXRNiGdu53STopK0mk5m1BImR+epWLONHSgOGhXjuzBAHNl5NWstmG6si2prlHPXgeE4Ep+ZF/j5HTEyL0aMkEh3SDFNhGIn6BkFG1Kq/yk+m5/PWQ//tzxNxPl8XiFYkF5ybruRiDSqKLJUcSRVztQHV7nzm+Ost+TXU/HzWmkeCoMC2rFmW47j13rkFvJfLTd1IQVNjw50T4FQgkAeTbYPkW/ezufHlvZtvAt3nInN+liNy9+NpECwyYF2az+7HE0Pj8WwaOc+B6eB8lncRCiQ8EZyMg4sEECdTgECAdi9oCSw8gJQYOxzqWxLPAUULoKxSTBzPDHcCmIUAX2Q+dZkJaAaMMZsFici6z2m1JuPpHBBFANH9pLVOA9dk2Cl4D9qv3K5f9d4QCCoiMgUWI3ZNsqG5EUOGxWa7JtlQcBnZm6397pUzsVzPtd/Vqg4QxNeFNVt6MWLfZX8Fai3NtbE7+xo0MRabzT22y4pVmOZiO8FzRgvFLhoXtjXN5e7zHLvoZAytdhyppRZVtn54aL2Eao1F6+unqOlPJLLJJNhTsVQiYUwgxgPjAX3G8xUNaUIxJJowOr/V49rQUmUIasPGAG8bs2XSGMMXYHi5+J582i+B2HS6JFUG4agEsNLfGFjxMNg20Jmw1KAliYNi0dJQkiTz3cQQXC2Xy/uH0CGJo+02iocASzuEV9ttGCeBwfZxcn+/SpKdp2BVMgVj7zIcafwmVjqx+otYNGx/7BHCl69a549wMg8+SfwgL1ZxGAxTJHxkYIXAuIyHnvKSMRPOGBsFLsaxK6wlBp02T1IfwRIPFigQjB+IqSpZXX53lDewAO4FST7llewVliGWKhUlmh6kl1gFGqjBmk5kWBPLcGJbdBXL2NT4l1j+LLigDCx/BozM18ZCsBHdZMpFrHSJBemXWTmRZ4EMJxYaYNrc7QAniilRdMeJTYbZDvmk+Wjk0djCjU8cYIlrLMjCCj0Fq5lMD3iWK8ZH3DYWB0zEG04M2w++TCyjEByKIigTlyArYbKeF4GFyguslFg/WObp/y0tWtCoUTjLACcWCgvQuIFVKGhAIwaKJTMbWOQKKxUChjoAkZYCJT5EwsbYQNknyWoVJ8n2U6iAGylwexrUcFaijGPKGGU8W2hQS1WMa7sTD47M+4nlg2r1oLyo5qnFuA2ooPYRkPmT1CfIiudFhBsfy/FS1vRKeduvc0Vxvfgt8mD1B1/jD3g9efLkyZMnT548efLkyZMnT548/S/6L9Xniy7gLfBhAAAAAElFTkSuQmCC" alt="">
+               FOODIES
+              </a> 
+              <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon text-white"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item p-1">
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
+                  </li>
+                  <li class="nav-item p-1">
+                    <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                  </li>
+                  {% if request.user.is_authenticated %}
+                  <li class="nav-item p-1">
+                    <a class="nav-link" href="{% url 'my-orders' %}">My Orders</a>
+                  </li>
+                  <li class="nav-item p-1">
+                    <a class="nav-link" href="{% url 'seating_plan' %}" tabindex="-1">Visit Seating Plan</a>
+                  </li>
+                  <li class="nav-item p-1">
+                    <a class="nav-link" href="{% url 'explore_foods' %}" tabindex="-1"> Explore Foods</a>
+                  </li>
+                  <li class="nav-item p-1">
+                    <a class="nav-link" href="{% url 'logout' %}" tabindex="-1">Logout</a>
+                  </li>
+                  <li class="nav-item p-1">
+                    <a class="nav-link" href="{% url 'index' %}"><i class="fa fa-user" aria-hidden="true"></i> : {{request.user | title}}</a>
+                  </li>
+                  {% else %}
+                  <li class="nav-item p-1">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                  </li>
+                  <li class="nav-item p-1">
+                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                  </li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    {% block maincontent %}{% endblock maincontent %}
+    
+
+
+
+
+
+
+
+<div class="container-fluid  d-flex justify-content-center flex-column" style="height: 40vh; background-color:darkblue;">
+    <div class="row">
+        <div>
+            <ul class="d-flex justify-content-center text-white" style="list-style-type: none;">
+                <li class="nav-item"><a href="#" class="nav-link text-white">Register</a></li>
+                <li class="nav-item"><a href="#" class="nav-link ms-4 text-white">Forum</a></li>
+                <li class="nav-item"><a href="#" class="nav-link ms-4 text-white">Affiliate</a></li>
+                <li class="nav-item"><a href="#" class="nav-link ms-4 text-white">FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div>
+            <ul class="d-flex justify-content-center text-white" style="list-style-type: none;">
+                <li class="nav-item"><a href="#" class="nav-link text-white"><i class="fab fa-facebook"></i></a></li>
+                <li class="nav-item"><a href="#" class="nav-link ms-3 text-white"><i class="fab fa-linkedin"></i></a></li>
+                <li class="nav-item"><a href="#" class="nav-link ms-3 text-white"><i class="fab fa-youtube"></i>
+                </a></li>
+                <li class="nav-item"><a href="#" class="nav-link ms-3 text-white"><i class="fab fa-instagram"></i></a></li>
+                <li class="nav-item"><a href="#" class="nav-link ms-3 text-white"><i class="fab fa-twitter"></i></a></li>
+                <li class="nav-item"><a href="#" class="nav-link ms-3 text-white"><i class="fas fa-phone"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="d-flex justify-content-center text-white">
+          <p class="lead text-white">@ 2024, Foodies, All rights Reseved.</p>
+        </div>
+    </div>
+
+</div>
+    {% block payment-gateway %}{% endblock payment-gateway %}
+
+    <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"
+></script>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"
+></script>
+</body>
+</html>
